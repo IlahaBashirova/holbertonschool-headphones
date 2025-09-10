@@ -43,7 +43,7 @@ header {
     justify-content: center;
     align-items: center;
     gap: 7px;
-    margin: 22rem;
+    margin-top: 200px;
     h1 {
         color: white;
         font-size: 32px;
@@ -80,28 +80,41 @@ header {
     }
 
 }
-.text {
-        color: white;
-        font-family: "Source Sans Pro", sans-serif;
-        font-weight: 400;
-        font-size: 16px;
-        width: 637px;
-        height: 104px;
-        line-height: 26px;
-        text-align: center;
-        padding-top: 65px;
-    }
-@margin (max-width: 768px) {
+
+@media (max-width: 768px) {
     .hero {
-        width: 100%;
-        background-position: left;
+        height: 120vh;
     }
     header {
-        padding-left: 60px;
-        padding-right: 60px;
+        padding-right: 50px;
+        padding-left: 50px;
+    }
+    p{
+        font-size: 12px;
+    }
+    .hero-main {
+        height: 313px;
+        padding: 0;
+        margin-top: 100px;
+        margin-bottom: 20px;
+        h1 {
+            font-size: 24px;
+        }
+        p {
+            font-size: 12px;
+        }
+        button {
+            width: 142px;
+            height: 34px;
+            font-size: 12px;
+            margin-top: 20px;
+        }
+        .text {
+            font-size: 14px;
+            padding-top: 40px;
+        }
     }
 }
-
 /*  WHAT WE DO SECTION */
 
 .what-we-do {
