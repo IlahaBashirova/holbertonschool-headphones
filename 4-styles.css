@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
 }
+/* Header ---*/
 .hero {
     background-image: url("imgs/background.png");
     background-position: center;
@@ -90,6 +91,19 @@ header {
         text-align: center;
         padding-top: 65px;
     }
+@margin (max-width: 768px) {
+    .hero {
+        width: 100%;
+        background-position: left;
+    }
+    header {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+}
+
+/*  WHAT WE DO SECTION */
+
 .what-we-do {
     height: 80vh;
     display: flex;
@@ -122,6 +136,7 @@ header {
     padding-top: 250px;
     padding-bottom: 110px;;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 56px;
@@ -142,6 +157,8 @@ header {
     }
 
 }
+
+/* OUR RESULTS SECTION */
 
 .dark {
     background-image: url("imgs/background-2.png");
@@ -177,10 +194,14 @@ header {
     }
     .images {
         display: flex;
+        flex-wrap: wrap;
         padding-top: 250px;
         gap: 76px;
     }
 }
+
+/* FORM SECTION CONTACT US */
+
 .contact-us {
     display: flex;
     flex-direction: column;
@@ -231,6 +252,9 @@ header {
         align-self: center;
     }
 }
+
+/* FOOTER */
+
 footer {
     height: 200px;
     width: 100%;
