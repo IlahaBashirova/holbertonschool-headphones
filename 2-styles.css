@@ -148,4 +148,37 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 750px;
+    .h1-text {
+        width: 637px;
+        height: 184px;
+        padding-top: 110px;
+        text-align: center;
+        h1 {
+            font-size: 32px;
+            color: white;
+            padding-top: 60px;
+        }
+        .text {
+            color: white;
+            font-family: "Source Sans Pro", sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            width: 637px;
+            height: 104px;
+            line-height: 26px;
+            text-align: center;
+            padding-top: 40px;
+        }
+
+    }
+    .images {
+        display: flex;
+        padding-top: 250px;
+        gap: 76px;
+    }
 }
+
