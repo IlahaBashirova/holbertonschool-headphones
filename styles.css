@@ -3,65 +3,96 @@
     margin: 0;
     padding: 0;
 }
-
 /* Header ---*/
-.hero {
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.hero_section{
     background-image: url("imgs/background.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
 }
 
 h1, h3, label, p {
    font-family: "Source Sans Pro", sans-serif; 
 }
 
-header {
+.hero_section .hero {
+    
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 115px;
+    padding-inline: 66px;
+}
+
+.hero .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 50px;
-    /* FIXED: Responsive padding instead of fixed 200px */
-    padding-left: clamp(20px, 10vw, 200px);
-    padding-right: clamp(20px, 10vw, 200px);
-    
+    padding: 20px 0;
+    width: 100%;
     img {
         width: 161px;
-        height: 32px;
+        height:32px;
     }
     nav {
         display: flex;
-        /* FIXED: Responsive gap */
-        gap: clamp(15px, 3vw, 41px);
+        gap: 41px;
         a {
             text-decoration: none;
             color: white;
             font-family: "Source Sans Pro", sans-serif;
-            font-weight: bold;
+            font-weight: bold ;
             font-size: 12px;
         }
     }
 }
+.hero .menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    span {
+        height: 3px;
+        width: 25px;
+        background: white;
+        margin-bottom: 4px;
+        border-radius: 5px;
+    }
+}
+.spanbar.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.spanbar.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.spanbar.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
 
 .hero-main {
+    
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
-    gap: 7px;
-    /* FIXED: Responsive margin instead of fixed 200px */
-    margin-top: clamp(50px, 15vh, 200px);
-    
     h1 {
         color: white;
-        font-size: clamp(24px, 4vw, 32px);
+        font-size: 32px;
         font-weight: bold;
+        text-align: center;
     }
     p {
         color: white;
-        font-size: clamp(12px, 2vw, 16px);
+        font-size: 16px;
         font-weight: bold;
+        text-align: center;
     }
     button {
         font-family: "Source Sans Pro", sans-serif;
@@ -73,39 +104,30 @@ header {
         height: 44px;
         border-color: #FF6565;
         border-radius: 22px;
-        margin-top: 40px;
+        margin: 40px 0;
         box-shadow: 5px 5px 10px rgb(41, 40, 40);
     }
     .text {
+        
         color: white;
         font-family: "Source Sans Pro", sans-serif;
         font-weight: 400;
-        font-size: clamp(14px, 2vw, 16px);
-        /* FIXED: Flexible width instead of fixed 637px */
-        width: min(637px, 90vw);
+        font-size: 16px;
         line-height: 26px;
         text-align: center;
-        /* FIXED: Reduced padding */
-        padding-top: clamp(30px, 8vh, 65px);
+        max-width: 637px;
     }
+
 }
 
 @media (max-width: 768px) {
-    .hero {
-        height: 120vh;
-    }
-    header {
-        padding-right: 50px;
-        padding-left: 50px;
-    }
-    p {
+
+
+    p{
         font-size: 12px;
     }
     .hero-main {
-        height: 313px;
-        padding: 0;
-        margin-top: 100px;
-        margin-bottom: 20px;
+
         h1 {
             font-size: 24px;
         }
@@ -124,48 +146,87 @@ header {
         }
     }
 }
-
-/* WHAT WE DO SECTION */
-.what-we-do {
-    /* FIXED: Responsive height */
-    height: auto;
-    min-height: 60vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    /* FIXED: Added responsive padding */
-    padding: clamp(60px, 10vh, 110px) 20px;
-    
-    .h1-text {
-        /* FIXED: Flexible width */
-        width: min(637px, 90vw);
-        margin-bottom: clamp(30px, 8vh, 60px);
-        
+@media (max-width: 375px) {
+    .hero .navbar {
+        display: none;
+    }
+    .spanbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .hero .menu-icon {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 30px;
+        img {
+            width: 161px;
+            height: 32px;
+        }
+    }
+    .hero-main {
+        gap: 5px;
         h1 {
-            font-size: clamp(24px, 4vw, 32px);
-            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        p {
+            font-size: 10px;
+        }
+        button {
+            width: 120px;
+            height: 30px;
+            font-size: 10px;
+            margin-top: 10px;
         }
         .text {
-            color: black;
-            font-family: "Source Sans Pro", sans-serif;
-            font-weight: 400;
-            font-size: clamp(14px, 2vw, 16px);
-            line-height: 26px;
-            text-align: center;
+            font-size: 12px;
+            padding-top: 20px;
         }
     }
 }
 
-.icons {
-    /* FIXED: Much more compact spacing */
-    padding: 0 20px clamp(60px, 10vh, 110px);
+/*  WHAT WE DO SECTION */
+
+.what-we-do .we-do {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 100px 0;
+    gap: 150px;
+    .h1-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-inline: 66px;
+        gap: 40px;
+        h1 {
+            font-size: 32px;
+        }
+        .text {
+            
+            color: black;
+            font-family: "Source Sans Pro", sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 26px;
+            max-width: 637px;;
+        }
+
+    }
+
+}
+.we-do .icons {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    /* FIXED: Responsive gap */
-    gap: clamp(20px, 4vw, 56px);
+    gap: 56px;
+    flex-wrap: wrap;
     
     .icon {
         display: flex;
@@ -173,73 +234,84 @@ header {
         align-items: center;
         width: 207px;
         height: 179px;
-        gap: 24px;
+        gap:24px;
     }
     p {
-        padding-top: 13px;
+        padding-top:13px;
         text-align: center;
         line-height: 26px;
     }
+
 }
 
 /* OUR RESULTS SECTION */
+
 .dark {
     background-image: url("imgs/background-2.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+    
+.dark .our-results {
+    
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* FIXED: Auto height instead of fixed 750px */
-    min-height: 600px;
-    /* FIXED: Added responsive padding */
-    padding: clamp(60px, 10vh, 110px) 20px;
-    
+    gap: 56px;
     .h1-text {
-        /* FIXED: Flexible width */
-        width: min(637px, 90vw);
-        text-align: center;
-        margin-bottom: clamp(40px, 8vh, 80px);
         
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+        text-align: center;
+        margin: 110px 66px 0 66px;
         h1 {
-            font-size: clamp(24px, 4vw, 32px);
+            font-size: 32px;
             color: white;
-            margin-bottom: 20px;
         }
         .text {
             color: white;
             font-family: "Source Sans Pro", sans-serif;
             font-weight: 400;
-            font-size: clamp(14px, 2vw, 16px);
+            font-size: 16px;
             line-height: 26px;
-            text-align: center;
+            max-width: 637px;
         }
+    
     }
     .images {
+        
         display: flex;
-        flex-wrap: wrap;
+        align-items: center;
         justify-content: center;
-        /* FIXED: Much smaller gap */
-        gap: clamp(20px, 5vw, 76px);
+        flex-wrap: wrap;
+        padding-bottom: 80px;
+        gap: 76px;
     }
-}
+
+}    
+
 
 /* FORM SECTION CONTACT US */
-.contact-us {
+
+.contact-us .form-contact {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* FIXED: Added responsive padding */
-    padding: clamp(60px, 10vh, 110px) 20px clamp(80px, 12vh, 130px);
 
     form {
-        width: min(335px, 90vw);
+        margin-top: 110px;
+        margin-bottom: 130px;
+        width: 335px;
+        height: 373px;
     }
     h1 {
         font-weight: 600;
-        font-size: clamp(24px, 4vw, 32px);
+        font-size: 32px;
         text-align: center;
     }
     .form-area {
@@ -250,11 +322,12 @@ header {
         label {
             font-weight: 600;
             font-size: 14px;
+
         }
         .label-input {
             display: flex;
             flex-direction: column;
-            input, textarea {
+            input , textarea {
                 border: none;
                 border-bottom: 1px solid rgb(197, 191, 191);
             }
@@ -274,33 +347,38 @@ header {
         align-self: center;
     }
 }
+@media (max-width: 375px) {
+    form {
+        padding-inline: 20px;;
+    }
+}
 
 /* FOOTER */
+
 footer {
-    height: auto;
-    min-height: 150px;
-    width: 100%;
     background-color: #071629;
-    /* FIXED: Added responsive padding */
-    padding: clamp(40px, 8vh, 90px) 0 20px;
-    
     .footer-class {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        /* FIXED: Responsive padding */
-        padding-left: clamp(20px, 10vw, 200px);
-        padding-right: clamp(20px, 10vw, 200px);
-        margin-bottom: 20px;
-    }
+        padding-inline: 66px;
+        padding-top: 90px;
+        padding-bottom: 110px;
     img {
         width: 161px;
-        height: 32px;
+        height:32px;
     }
     p {
         text-align: center;
         color: rgb(83, 82, 82);
         font-size: 12px;
         font-weight: normal;
+    }
+}
+}
+@media (max-width: 375px) {
+    .footer-class {
+        flex-direction: column;
+        gap: 40px;
     }
 }
